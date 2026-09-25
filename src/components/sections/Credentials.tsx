@@ -6,15 +6,15 @@ const icons = [Medal, Trophy, Award]
 
 export function Credentials() {
   return (
-    <section className="relative border-y border-gold/25 bg-panel">
+    <section className="relative border-y border-brand/25 bg-panel">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
         <ul className="grid gap-6 sm:grid-cols-3">
           {credentials.badges.map((badge, i) => {
             const Icon = icons[i % icons.length]
             return (
               <li key={badge} className="flex items-center justify-center gap-3 text-center sm:flex-col">
-                <span className="flex size-12 items-center justify-center rounded-full border border-gold/50 bg-gold/10 shadow-[0_0_20px_-6px_var(--gold)]">
-                  <Icon className="size-5 text-gold-light" aria-hidden />
+                <span className="flex size-12 items-center justify-center rounded-full border border-brand/50 bg-brand/10 shadow-[0_0_20px_-6px_var(--brand)]">
+                  <Icon className="size-5 text-brand-light" aria-hidden />
                 </span>
                 <span className="font-display text-lg uppercase tracking-wider">{badge}</span>
               </li>

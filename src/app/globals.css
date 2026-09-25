@@ -8,19 +8,19 @@
   --color-card-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
-  --color-primary: var(--gold);
-  --color-primary-foreground: var(--background);
+  --color-primary: var(--brand);
+  --color-primary-foreground: #ffffff;
   --color-border: var(--border);
   --color-input: var(--border);
-  --color-ring: var(--gold);
-  --color-destructive: var(--rose);
+  --color-ring: var(--brand);
+  --color-destructive: var(--maroon);
 
   --color-stage: var(--background);
   --color-panel: var(--card);
-  --color-gold: var(--gold);
-  --color-gold-light: var(--gold-light);
-  --color-gold-dark: var(--gold-dark);
-  --color-rose: var(--rose);
+  --color-brand: var(--brand);
+  --color-brand-light: var(--brand-light);
+  --color-brand-dark: var(--brand-dark);
+  --color-maroon: var(--maroon);
 
   --font-sans: var(--font-inter);
   --font-display: var(--font-oswald);
@@ -34,18 +34,29 @@
   --animate-sparkle: sparkle 2.4s ease-in-out infinite;
 }
 
+/*
+  Palette drawn from the big three dance-team competitions:
+  - NDA / UDA (Varsity Spirit): royal "championship" blue + black
+  - DTU: deep maroon on black/white
+  Headlines use a chrome/rhinestone foil instead of gold so the warm
+  trophy photography pops against a cool stage.
+*/
 :root {
   --radius: 0.5rem;
-  --background: #0a0a0f;
-  --card: #14141c;
-  --foreground: #f5f3ee;
-  --muted: #1c1c26;
-  --muted-foreground: #a8a6b3;
-  --border: #2a2a36;
-  --gold: #d4af37;
-  --gold-light: #f5d97a;
-  --gold-dark: #9c7c1f;
-  --rose: #e11d74;
+  --background: #06080f;
+  --card: #0e1320;
+  --foreground: #f3f5fa;
+  --muted: #161c2b;
+  --muted-foreground: #a3abbd;
+  --border: #232b3d;
+  --brand: #2563eb;        /* championship royal blue */
+  --brand-light: #7aa7ff;  /* text-safe blue on dark */
+  --brand-dark: #1a44a8;
+  --maroon: #c0265a;       /* DTU maroon, lifted for contrast on black */
+  --maroon-deep: #5a0a28;
+  --chrome-1: #8e9ab3;
+  --chrome-2: #e9eef7;
+  --chrome-3: #ffffff;
   color-scheme: dark;
 }
 
@@ -60,7 +71,8 @@
     @apply bg-background text-foreground;
   }
   h1, h2, h3, h4 {
-    font-family: var(--font-display);
+    /* --font-display lives in @theme inline (not emitted as a runtime var), so reference the next/font var directly */
+    font-family: var(--font-oswald), ui-sans-serif, system-ui, sans-serif;
     letter-spacing: 0.02em;
   }
 }
@@ -76,9 +88,9 @@
 }
 
 @layer components {
-  /* Gold foil text for headlines */
+  /* Chrome / rhinestone foil text for headlines, with a hint of championship blue */
   .text-foil {
-    background: linear-gradient(100deg, var(--gold-dark) 0%, var(--gold) 25%, var(--gold-light) 50%, var(--gold) 75%, var(--gold-dark) 100%);
+    background: linear-gradient(100deg, var(--chrome-1) 0%, var(--chrome-2) 22%, var(--chrome-3) 40%, var(--brand-light) 62%, var(--chrome-2) 80%, var(--chrome-1) 100%);
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
@@ -88,29 +100,29 @@
   /* Spotlight glow from above */
   .spotlight {
     background:
-      radial-gradient(ellipse 60% 55% at 50% 0%, color-mix(in oklab, var(--gold) 22%, transparent), transparent 70%),
+      radial-gradient(ellipse 60% 55% at 50% 0%, color-mix(in oklab, var(--brand) 22%, transparent), transparent 70%),
       var(--background);
   }
 
-  /* Thin gold rule with a center diamond */
+  /* Thin brand rule with a center diamond */
   .foil-divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    background: linear-gradient(90deg, transparent, var(--brand), transparent);
   }
 
   /* Judges' score sheet panel */
   .scorecard {
     position: relative;
     background:
-      repeating-linear-gradient(0deg, transparent 0 27px, color-mix(in oklab, var(--gold) 7%, transparent) 27px 28px),
+      repeating-linear-gradient(0deg, transparent 0 27px, color-mix(in oklab, var(--brand) 7%, transparent) 27px 28px),
       var(--card);
-    border: 1px solid color-mix(in oklab, var(--gold) 30%, var(--border));
+    border: 1px solid color-mix(in oklab, var(--brand) 30%, var(--border));
     border-radius: var(--radius);
   }
 
   /* Sequin shimmer sweep for primary CTAs */
   .btn-shimmer {
-    background-image: linear-gradient(110deg, var(--gold) 0%, var(--gold) 40%, var(--gold-light) 50%, var(--gold) 60%, var(--gold) 100%);
+    background-image: linear-gradient(110deg, var(--brand) 0%, var(--brand) 40%, #4f86f7 50%, var(--brand) 60%, var(--brand) 100%);
     background-size: 200% 100%;
     animation: var(--animate-shimmer);
   }

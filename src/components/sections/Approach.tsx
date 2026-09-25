@@ -16,12 +16,12 @@ export function Approach() {
             return (
               <article
                 key={item.title}
-                className="group relative rounded-lg border border-border bg-panel p-6 transition-colors hover:border-gold/60"
+                className="group relative rounded-lg border border-border bg-panel p-6 transition-colors hover:border-brand/60"
               >
-                <span className="absolute right-5 top-5 font-display text-5xl text-gold/15 transition-colors group-hover:text-gold/30">
+                <span className="absolute right-5 top-5 font-display text-5xl text-brand/15 transition-colors group-hover:text-brand/30">
                   {i + 1}
                 </span>
-                <Icon className="size-7 text-gold" aria-hidden />
+                <Icon className="size-7 text-brand" aria-hidden />
                 <h3 className="mt-5 text-2xl uppercase tracking-wide">{item.title}</h3>
                 <p className="mt-3 text-muted-foreground">{item.body}</p>
               </article>

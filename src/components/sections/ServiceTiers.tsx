@@ -32,12 +32,12 @@ export function ServiceTiers({ variant = "full" }: ServiceTiersProps) {
                 className={cn(
                   "relative flex scroll-mt-24 flex-col rounded-xl border bg-panel p-7",
                   tier.featured
-                    ? "border-gold shadow-[0_0_60px_-18px_var(--gold)] lg:-mt-4"
+                    ? "border-brand shadow-[0_0_60px_-18px_var(--brand)] lg:-mt-4"
                     : "border-border"
                 )}
               >
                 {tier.featured && (
-                  <span className="absolute -top-3.5 left-1/2 inline-flex -translate-x-1/2 items-center gap-1.5 whitespace-nowrap rounded-full bg-gold px-4 py-1 text-xs font-bold uppercase tracking-widest text-stage">
+                  <span className="absolute -top-3.5 left-1/2 inline-flex -translate-x-1/2 items-center gap-1.5 whitespace-nowrap rounded-full bg-brand px-4 py-1 text-xs font-bold uppercase tracking-widest text-white">
                     <Crown className="size-3.5" aria-hidden />
                     Most Detailed
                   </span>
@@ -53,11 +53,11 @@ export function ServiceTiers({ variant = "full" }: ServiceTiersProps) {
 
                 <div className="foil-divider my-6 opacity-40" />
 
-                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gold">Includes</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-brand-light">Includes</p>
                 <ul className={cn("mt-4 grid gap-2.5", !preview && tier.includes.length > 8 && "sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2")}>
                   {includes.map((item) => (
                     <li key={item} className="flex items-start gap-2.5">
-                      <Check className="mt-0.5 size-4 shrink-0 text-gold" aria-hidden />
+                      <Check className="mt-0.5 size-4 shrink-0 text-brand" aria-hidden />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -65,14 +65,14 @@ export function ServiceTiers({ variant = "full" }: ServiceTiersProps) {
                 {hidden > 0 && (
                   <Link
                     href={`/services#${tier.slug}`}
-                    className="mt-3 text-sm text-gold-light underline-offset-4 hover:underline"
+                    className="mt-3 text-sm text-brand-light underline-offset-4 hover:underline"
                   >
                     + {hidden} more areas reviewed
                   </Link>
                 )}
 
                 <p className="mt-6 rounded-md border border-border bg-stage/60 p-4 text-sm text-muted-foreground">
-                  <span className="font-semibold uppercase tracking-wider text-gold-light">Ideal for: </span>
+                  <span className="font-semibold uppercase tracking-wider text-brand-light">Ideal for: </span>
                   {tier.idealFor}
                 </p>
 
@@ -90,7 +90,7 @@ export function ServiceTiers({ variant = "full" }: ServiceTiersProps) {
 
         <p className="mt-10 text-center text-muted-foreground">
           Not sure which service you need?{" "}
-          <Link href="/get-started" className="text-gold-light underline-offset-4 hover:underline">
+          <Link href="/get-started" className="text-brand-light underline-offset-4 hover:underline">
             Tell us about your team
           </Link>{" "}
           and we&apos;ll help you choose.

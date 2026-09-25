@@ -22,7 +22,7 @@ export default async function GetStartedPage({
     <section className="spotlight py-16 md:py-24">
       <div className="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-[1fr_1.4fr]">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-gold">Get Your Critique</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-brand-light">Get Your Critique</p>
           <h1 className="mt-4 text-4xl font-bold uppercase leading-tight sm:text-5xl">
             Submit your routine.
             <br />
@@ -36,14 +36,14 @@ export default async function GetStartedPage({
           <ul className="mt-8 space-y-3">
             {credentials.badges.map((b) => (
               <li key={b} className="flex items-center gap-3">
-                <Star className="size-4 fill-gold text-gold" aria-hidden />
+                <Star className="size-4 fill-brand text-brand" aria-hidden />
                 <span className="font-display uppercase tracking-wider">{b}</span>
               </li>
             ))}
           </ul>
 
           <div className="mt-8 flex items-start gap-3 rounded-lg border border-border bg-panel p-4 text-sm text-muted-foreground">
-            <ShieldCheck className="mt-0.5 size-5 shrink-0 text-gold" aria-hidden />
+            <ShieldCheck className="mt-0.5 size-5 shrink-0 text-brand" aria-hidden />
             <p>
               Your submitted video and critique will be treated as private and will not be shared publicly without your
               permission. {disclaimer}

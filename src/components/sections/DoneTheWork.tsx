@@ -21,7 +21,7 @@ export function DoneTheWork() {
               key={item}
               className="flex items-start gap-4 rounded-lg border border-border bg-panel/70 px-5 py-4 text-lg"
             >
-              <Sparkle className="mt-1 size-4 shrink-0 fill-rose text-rose" aria-hidden />
+              <Sparkle className="mt-1 size-4 shrink-0 fill-maroon text-maroon" aria-hidden />
               {item}
             </li>
           ))}

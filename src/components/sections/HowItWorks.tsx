@@ -22,7 +22,7 @@ export function HowItWorks() {
         <ol className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {howItWorks.map((step, i) => (
             <li key={step.title} className="scorecard flex gap-5 p-6">
-              <span className="flex size-14 shrink-0 items-center justify-center rounded-full border-2 border-gold bg-stage font-display text-2xl text-gold-light shadow-[0_0_20px_-6px_var(--gold)]">
+              <span className="flex size-14 shrink-0 items-center justify-center rounded-full border-2 border-brand bg-stage font-display text-2xl text-brand-light shadow-[0_0_20px_-6px_var(--brand)]">
                 {i + 1}
               </span>
               <div>

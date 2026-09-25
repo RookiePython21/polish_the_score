@@ -9,7 +9,7 @@ export function DetailsWeLook() {
           <div>
             <SectionHeading eyebrow={danceCritique.eyebrow} lines={[danceCritique.heading]} align="left" />
             <p className="mt-6 text-lg">{danceCritique.intro}</p>
-            <div className="mt-4 space-y-1 text-lg text-gold-light/90">
+            <div className="mt-4 space-y-1 text-lg text-brand-light/90">
               {danceCritique.lines.map((l) => (
                 <p key={l}>{l}</p>
               ))}
@@ -27,7 +27,7 @@ export function DetailsWeLook() {
               {danceCritique.details.map((d, i) => (
                 <div key={d.title} className="scorecard p-5">
                   <dt className="flex items-baseline gap-3">
-                    <span className="font-display text-sm text-gold tabular-nums">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="font-display text-sm text-brand-light tabular-nums">{String(i + 1).padStart(2, "0")}</span>
                     <span className="font-display text-lg uppercase tracking-wider">{d.title}</span>
                   </dt>
                   <dd className="mt-2 text-muted-foreground">{d.body}</dd>

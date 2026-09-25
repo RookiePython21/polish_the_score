@@ -15,13 +15,13 @@ export function SectionHeading({ eyebrow, lines, align = "center", className }: 
       {eyebrow && (
         <p
           className={cn(
-            "mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold",
+            "mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.3em] text-brand-light",
             align === "center" && "justify-center"
           )}
         >
-          <Star className="size-3 fill-gold" aria-hidden />
+          <Star className="size-3 fill-brand-light text-brand-light" aria-hidden />
           {eyebrow}
-          <Star className="size-3 fill-gold" aria-hidden />
+          <Star className="size-3 fill-brand-light text-brand-light" aria-hidden />
         </p>
       )}
       <h2 className="text-3xl font-bold uppercase leading-tight sm:text-4xl md:text-5xl">

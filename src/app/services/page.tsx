@@ -31,7 +31,7 @@ export default function ServicesPage() {
         />
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-stage/60 via-stage/80 to-stage" />
         <div className="mx-auto max-w-4xl px-4 py-24 text-center sm:px-6 md:py-32">
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-gold">Services</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-brand-light">Services</p>
           <h1 className="mt-5 text-5xl font-bold uppercase leading-[0.95] sm:text-6xl md:text-7xl">
             Your routine.
             <br />

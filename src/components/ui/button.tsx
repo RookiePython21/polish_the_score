@@ -10,11 +10,11 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "btn-shimmer text-stage shadow-[0_0_24px_-4px_var(--gold)] hover:shadow-[0_0_36px_-2px_var(--gold-light)] hover:-translate-y-0.5",
+          "btn-shimmer text-white shadow-[0_0_24px_-4px_var(--brand)] hover:shadow-[0_0_36px_-2px_var(--brand-light)] hover:-translate-y-0.5",
         outline:
-          "border border-gold/60 bg-transparent text-gold-light hover:bg-gold/10 hover:border-gold",
+          "border border-brand/60 bg-transparent text-brand-light hover:bg-brand/10 hover:border-brand",
         ghost: "text-foreground hover:bg-muted",
-        link: "text-gold-light normal-case tracking-normal underline-offset-4 hover:underline",
+        link: "text-brand-light normal-case tracking-normal underline-offset-4 hover:underline",
       },
       size: {
         default: "h-11 px-5 text-sm",

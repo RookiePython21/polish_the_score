@@ -23,7 +23,7 @@ export function Hero() {
 
       <div className="mx-auto max-w-7xl px-4 pb-20 pt-16 sm:px-6 md:pb-32 md:pt-28">
         <div className="max-w-2xl">
-          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-gold">{brand.descriptor}</p>
+          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-brand-light">{brand.descriptor}</p>
 
           <h1 className="text-5xl font-bold uppercase leading-[0.95] sm:text-6xl md:text-7xl">
             Refine the details.
@@ -40,7 +40,7 @@ export function Hero() {
             ))}
           </div>
 
-          <p className="mt-6 font-display text-2xl uppercase tracking-wide text-gold-light">{hero.turn}</p>
+          <p className="mt-6 font-display text-2xl uppercase tracking-wide text-brand-light">{hero.turn}</p>
           <p className="mt-4 max-w-xl text-base text-muted-foreground">{hero.body}</p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">

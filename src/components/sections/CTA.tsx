@@ -6,9 +6,9 @@ import { brand, finalCta } from "@/content/site"
 
 export function CTA() {
   return (
-    <section className="spotlight relative overflow-hidden border-t border-gold/25 py-24 md:py-32">
+    <section className="spotlight relative overflow-hidden border-t border-brand/25 py-24 md:py-32">
       <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
-        <Sparkles className="mx-auto size-8 animate-sparkle text-gold-light" aria-hidden />
+        <Sparkles className="mx-auto size-8 animate-sparkle text-brand-light" aria-hidden />
         <h2 className="mt-6 text-4xl font-bold uppercase leading-tight sm:text-5xl md:text-6xl">{finalCta.heading}</h2>
 
         <div className="mx-auto mt-6 max-w-2xl space-y-1 text-lg text-muted-foreground">
@@ -23,7 +23,7 @@ export function CTA() {
               key={s}
               className={
                 i === finalCta.steps.length - 1
-                  ? "rounded-md border border-gold bg-gold/10 px-3 py-3 font-display text-lg uppercase text-gold-light"
+                  ? "rounded-md border border-brand bg-brand/10 px-3 py-3 font-display text-lg uppercase text-brand-light"
                   : "rounded-md border border-border bg-panel px-3 py-3 font-display text-lg uppercase"
               }
             >
@@ -37,7 +37,7 @@ export function CTA() {
           <UploadNudge />
         </div>
 
-        <p className="mt-12 text-sm uppercase tracking-[0.3em] text-gold/80">
+        <p className="mt-12 text-sm uppercase tracking-[0.3em] text-brand-light">
           Refine the details. Elevate the performance.
         </p>
         <p className="sr-only">{brand.name}</p>

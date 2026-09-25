@@ -5,7 +5,7 @@ import { forCoaches } from "@/content/site"
 
 export function ForCoaches() {
   return (
-    <section className="relative isolate overflow-hidden border-y border-gold/20 bg-panel py-20 md:py-28">
+    <section className="relative isolate overflow-hidden border-y border-brand/20 bg-panel py-20 md:py-28">
       <Image
         src="/images/medals.webp"
         alt=""

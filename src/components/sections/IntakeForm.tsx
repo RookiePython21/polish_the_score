@@ -109,12 +109,12 @@ export function IntakeForm({ initialService }: IntakeFormProps) {
   if (status === "done") {
     return (
       <div className="scorecard flex flex-col items-center p-10 text-center">
-        <Trophy className="size-12 text-gold-light" aria-hidden />
+        <Trophy className="size-12 text-brand-light" aria-hidden />
         <h2 className="mt-5 text-3xl uppercase text-foil">Your routine is in the judges&apos; hands.</h2>
         <p className="mt-4 max-w-md text-muted-foreground">
           We&apos;ve got your request. We&apos;ll reply by email to confirm your service and next steps.
         </p>
-        <p className="mt-6 font-display text-lg uppercase tracking-wide text-gold-light">
+        <p className="mt-6 font-display text-lg uppercase tracking-wide text-brand-light">
           Refine the details. Elevate the performance.
         </p>
       </div>
@@ -138,7 +138,7 @@ export function IntakeForm({ initialService }: IntakeFormProps) {
               ))}
               <option value="not-sure">Not sure yet — help me choose</option>
             </NativeSelect>
-            <ChevronDown className="pointer-events-none absolute right-3 top-1/2 size-5 -translate-y-1/2 text-gold" aria-hidden />
+            <ChevronDown className="pointer-events-none absolute right-3 top-1/2 size-5 -translate-y-1/2 text-brand" aria-hidden />
           </div>
         </div>
 
@@ -170,8 +170,8 @@ export function IntakeForm({ initialService }: IntakeFormProps) {
         </div>
 
         {/* Video */}
-        <fieldset id="video" className="grid scroll-mt-28 gap-4 rounded-lg border border-dashed border-gold/40 bg-stage/50 p-5">
-          <legend className="px-2 text-sm font-medium uppercase tracking-wider text-gold-light/90">
+        <fieldset id="video" className="grid scroll-mt-28 gap-4 rounded-lg border border-dashed border-brand/40 bg-stage/50 p-5">
+          <legend className="px-2 text-sm font-medium uppercase tracking-wider text-brand-light/90">
             Your Routine Video
           </legend>
           <p className="text-sm text-muted-foreground">
@@ -181,13 +181,13 @@ export function IntakeForm({ initialService }: IntakeFormProps) {
 
           {file ? (
             <div className="flex items-center gap-3 rounded-md border border-border bg-panel p-3">
-              <Film className="size-5 shrink-0 text-gold" aria-hidden />
+              <Film className="size-5 shrink-0 text-brand" aria-hidden />
               <div className="min-w-0 flex-1">
                 <p className="truncate text-sm">{file.name}</p>
                 <p className="text-xs text-muted-foreground">{formatMB(file.size)}</p>
                 {status === "uploading" && (
                   <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-muted" role="progressbar" aria-valuenow={progress} aria-valuemin={0} aria-valuemax={100}>
-                    <div className="h-full bg-gold transition-[width]" style={{ width: `${progress}%` }} />
+                    <div className="h-full bg-brand transition-[width]" style={{ width: `${progress}%` }} />
                   </div>
                 )}
               </div>
@@ -200,14 +200,14 @@ export function IntakeForm({ initialService }: IntakeFormProps) {
           ) : (
             <label
               htmlFor="videoFile"
-              className="flex cursor-pointer flex-col items-center gap-2 rounded-md border border-border bg-panel px-4 py-8 text-center transition-colors hover:border-gold/60"
+              className="flex cursor-pointer flex-col items-center gap-2 rounded-md border border-border bg-panel px-4 py-8 text-center transition-colors hover:border-brand/60"
               onDragOver={(e) => e.preventDefault()}
               onDrop={(e) => {
                 e.preventDefault()
                 pickFile(e.dataTransfer.files?.[0])
               }}
             >
-              <UploadCloud className="size-8 text-gold" aria-hidden />
+              <UploadCloud className="size-8 text-brand" aria-hidden />
               <span className="font-display uppercase tracking-wider">Upload your video</span>
               <span className="text-xs text-muted-foreground">Tap to choose or drag it here · up to {MAX_VIDEO_MB} MB</span>
             </label>
@@ -220,7 +220,7 @@ export function IntakeForm({ initialService }: IntakeFormProps) {
             className="sr-only"
             onChange={(e) => pickFile(e.target.files?.[0])}
           />
-          {fileError && <p className="text-sm text-rose">{fileError}</p>}
+          {fileError && <p className="text-sm text-maroon">{fileError}</p>}
 
           <div className="grid gap-2">
             <Label htmlFor="videoUrl" className="normal-case tracking-normal text-muted-foreground">
@@ -240,7 +240,7 @@ export function IntakeForm({ initialService }: IntakeFormProps) {
         </div>
 
         {error && (
-          <p role="alert" className="rounded-md border border-rose/50 bg-rose/10 p-3 text-sm">
+          <p role="alert" className="rounded-md border border-maroon/50 bg-maroon/10 p-3 text-sm">
             {error}
           </p>
         )}
@@ -266,9 +266,9 @@ export function IntakeForm({ initialService }: IntakeFormProps) {
       </form>
 
       <p className="mt-6 flex items-center justify-center gap-2 text-center text-muted-foreground">
-        <Mail className="size-4 text-gold" aria-hidden />
+        <Mail className="size-4 text-brand" aria-hidden />
         Prefer email?{" "}
-        <a href={`mailto:${contact.email}`} className="text-gold-light underline-offset-4 hover:underline">
+        <a href={`mailto:${contact.email}`} className="text-brand-light underline-offset-4 hover:underline">
           {contact.email}
         </a>
       </p>
