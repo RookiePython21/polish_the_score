@@ -1,0 +1,121 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-primary: var(--gold);
+  --color-primary-foreground: var(--background);
+  --color-border: var(--border);
+  --color-input: var(--border);
+  --color-ring: var(--gold);
+  --color-destructive: var(--rose);
+
+  --color-stage: var(--background);
+  --color-panel: var(--card);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dark: var(--gold-dark);
+  --color-rose: var(--rose);
+
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-oswald);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --animate-shimmer: shimmer 3.5s linear infinite;
+  --animate-sparkle: sparkle 2.4s ease-in-out infinite;
+}
+
+:root {
+  --radius: 0.5rem;
+  --background: #0a0a0f;
+  --card: #14141c;
+  --foreground: #f5f3ee;
+  --muted: #1c1c26;
+  --muted-foreground: #a8a6b3;
+  --border: #2a2a36;
+  --gold: #d4af37;
+  --gold-light: #f5d97a;
+  --gold-dark: #9c7c1f;
+  --rose: #e11d74;
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: 0.02em;
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+@layer components {
+  /* Gold foil text for headlines */
+  .text-foil {
+    background: linear-gradient(100deg, var(--gold-dark) 0%, var(--gold) 25%, var(--gold-light) 50%, var(--gold) 75%, var(--gold-dark) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Spotlight glow from above */
+  .spotlight {
+    background:
+      radial-gradient(ellipse 60% 55% at 50% 0%, color-mix(in oklab, var(--gold) 22%, transparent), transparent 70%),
+      var(--background);
+  }
+
+  /* Thin gold rule with a center diamond */
+  .foil-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  /* Judges' score sheet panel */
+  .scorecard {
+    position: relative;
+    background:
+      repeating-linear-gradient(0deg, transparent 0 27px, color-mix(in oklab, var(--gold) 7%, transparent) 27px 28px),
+      var(--card);
+    border: 1px solid color-mix(in oklab, var(--gold) 30%, var(--border));
+    border-radius: var(--radius);
+  }
+
+  /* Sequin shimmer sweep for primary CTAs */
+  .btn-shimmer {
+    background-image: linear-gradient(110deg, var(--gold) 0%, var(--gold) 40%, var(--gold-light) 50%, var(--gold) 60%, var(--gold) 100%);
+    background-size: 200% 100%;
+    animation: var(--animate-shimmer);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .btn-shimmer { animation: none; }
+  }
+}
