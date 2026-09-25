@@ -8,8 +8,25 @@ import "./globals.css"
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] })
 const oswald = Oswald({ variable: "--font-oswald", subsets: ["latin"], weight: ["400", "500", "600", "700"] })
 
+// Empty env vars (e.g. a blank NEXT_PUBLIC_SITE_URL on Vercel) must fall through, so use || not ??.
+function siteUrl(): URL {
+  const candidates = [
+    process.env.NEXT_PUBLIC_SITE_URL,
+    process.env.VERCEL_PROJECT_PRODUCTION_URL && `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`,
+  ]
+  for (const c of candidates) {
+    if (!c?.trim()) continue
+    try {
+      return new URL(c.trim())
+    } catch {
+      // ignore malformed values and try the next candidate
+    }
+  }
+  return new URL("http://localhost:3000")
+}
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+  metadataBase: siteUrl(),
   title: {
     default: "Polish The Score | Competitive Dance Critique & Consulting",
     template: "%s | Polish The Score",
